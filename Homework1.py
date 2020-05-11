@@ -1,3 +1,14 @@
+import re
+import sys
+import glob
+import unittest
+from time import localtime
+from itertools import groupby
+import csv
+import itertools
+import xml.etree.ElementTree as etree
+import random
+
 print('Hello, world!')
 
 name = input('What is your name?\n')
@@ -21,8 +32,6 @@ greet('Jack')
 greet('Jill')
 greet('Bob')
 
-import re
-
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
@@ -37,15 +46,11 @@ grocery_bill = sum(prices[fruit] * my_purchase[fruit]
                    for fruit in my_purchase)
 print('I owe the grocer $%.2f' % grocery_bill)
 
-import sys
-
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
     print('sum =', total)
 except ValueError:
     print('Please supply integer arguments')
-
-import glob
 
 python_files = glob.glob('*.py')
 for file_name in sorted(python_files):
@@ -57,7 +62,6 @@ for file_name in sorted(python_files):
 
     print()
 
-from time import localtime
 
 activities = {8: 'Sleeping',
               9: 'Commuting',
@@ -107,8 +111,6 @@ my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
 
-import unittest
-
 
 def median(pool):
     copy = sorted(pool)
@@ -128,8 +130,9 @@ if __name__ == '__main__':
     unittest.main()
 
 
-def median(pool):
-    '''Statistical median to demonstrate doctest.
+def average(pool):
+    '''
+    Statistical median to demonstrate doctest.
     >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
     6 #change to 7 in order to pass the test
     '''
@@ -146,7 +149,6 @@ if __name__ == '__main__':
 
     doctest.testmod()
 
-from itertools import groupby
 
 lines = '''
 This is the
@@ -157,8 +159,6 @@ This is the second.
 for has_chars, frags in groupby(lines, bool):
     if has_chars:
         print(' '.join(frags))
-
-import csv
 
 
 def cmp(a, b):
@@ -210,12 +210,9 @@ def solve(n):
 for answer in solve(BOARD_SIZE):
     print(answer)
 
-import itertools
-
 
 def iter_primes():
     numbers = itertools.count(2)
-
     while True:
         prime = next(numbers)
         yield prime
@@ -228,6 +225,7 @@ for p in iter_primes():
         break
     print(p)
 
+
 dinner_recipe = '''<html><body><table>
 <tr><th>amt</th><th>unit</th><th>item</th></tr>
 <tr><td>24</td><td>slices</td><td>baguette</td></tr>
@@ -236,7 +234,6 @@ dinner_recipe = '''<html><body><table>
 <tr><td>1</td><td>jar</td><td>pesto</td></tr>
 </table></body></html>'''
 
-import xml.etree.ElementTree as etree
 
 tree = etree.fromstring(dinner_recipe)
 
@@ -279,7 +276,6 @@ queens = add_queen([])
 print(queens)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 
-import random
 
 guesses_made = 0
 
