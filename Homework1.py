@@ -1,6 +1,3 @@
-import re
-import sys
-
 print('Hello, world!')
 
 name = input('What is your name?\n')
@@ -24,6 +21,8 @@ greet('Jack')
 greet('Jill')
 greet('Bob')
 
+import re
+
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
@@ -38,6 +37,7 @@ grocery_bill = sum(prices[fruit] * my_purchase[fruit]
                    for fruit in my_purchase)
 print('I owe the grocer $%.2f' % grocery_bill)
 
+import sys
 
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
@@ -128,17 +128,17 @@ if __name__ == '__main__':
     unittest.main()
 
 
-# def median(pool):
-#     '''Statistical median to demonstrate doctest.
-#     >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
-#     6 #change to 7 in order to pass the test
-#     '''
-#     copy = sorted(pool)
-#     size = len(copy)
-#     if size % 2 == 1:
-#         return copy[int((size - 1) / 2)]
-#     else:
-#         return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
+def median(pool):
+    '''Statistical median to demonstrate doctest.
+    >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
+    6 #change to 7 in order to pass the test
+    '''
+    copy = sorted(pool)
+    size = len(copy)
+    if size % 2 == 1:
+        return copy[int((size - 1) / 2)]
+    else:
+        return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
 
 
 if __name__ == '__main__':
