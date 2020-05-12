@@ -1,12 +1,11 @@
 import csv
 import glob
-import xml.etree.ElementTree as etree
 import itertools
 import random
 import re
 import sys
 import unittest
-from itertools import groupby
+import xml.etree.ElementTree as etree
 from time import localtime
 
 print('Hello, world!')
@@ -61,7 +60,6 @@ for file_name in sorted(python_files):
             print('    ' + line.rstrip())
 
     print()
-
 
 activities = {8: 'Sleeping',
               9: 'Commuting',
@@ -149,14 +147,13 @@ if __name__ == '__main__':
 
     doctest.testmod()
 
-
 lines = '''
 This is the
 first paragraph.
 
 This is the second.
 '''.splitlines()
-for has_chars, frags in groupby(lines, bool):
+for has_chars, frags in itertools.groupby(lines, bool):
     if has_chars:
         print(' '.join(frags))
 
@@ -225,7 +222,6 @@ for p in iter_primes():
         break
     print(p)
 
-
 dinner_recipe = '''<html><body><table>
 <tr><th>amt</th><th>unit</th><th>item</th></tr>
 <tr><td>24</td><td>slices</td><td>baguette</td></tr>
@@ -233,7 +229,6 @@ dinner_recipe = '''<html><body><table>
 <tr><td>1</td><td>cup</td><td>tomatoes</td></tr>
 <tr><td>1</td><td>jar</td><td>pesto</td></tr>
 </table></body></html>'''
-
 
 tree = etree.fromstring(dinner_recipe)
 
@@ -275,7 +270,6 @@ def add_queen(queens):
 queens = add_queen([])
 print(queens)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
-
 
 guesses_made = 0
 
