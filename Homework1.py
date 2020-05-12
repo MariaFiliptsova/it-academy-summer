@@ -6,8 +6,9 @@ import re
 import sys
 import unittest
 import xml.etree.ElementTree as etree
-from itertools import groupby
 from time import localtime
+from itertools import groupby
+
 
 print('Hello, world!')
 
