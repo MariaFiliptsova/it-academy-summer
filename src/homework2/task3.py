@@ -15,7 +15,6 @@ def sub_string(str_):
 
     # write your code here
     line_without_space = str_.replace(" ", "")
-    length_of_line = len(line_without_space)
     new_line = []
     for symbol in line_without_space:
         if symbol not in new_line:

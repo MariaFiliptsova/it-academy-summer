@@ -1,4 +1,3 @@
-import math
 import os
 
 '''https://www.hackerrank.com/challenges/py-if-else/problem
@@ -56,6 +55,7 @@ if __name__ == '__main__':
 
 '''https://www.hackerrank.com/challenges/greedy-florist/problem
 '''
+
 
 # Complete the getMinimumCost function below.
 def getMinimumCost(k, c):
