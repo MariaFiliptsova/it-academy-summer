@@ -16,7 +16,6 @@ def longest_word(str_):
     # write your code here
     import string
     str_ = str_.split()
-    str_length = len(str_)
     longest_word = None
     longest_word_length = 0
     punctuation_symbols = string.punctuation
