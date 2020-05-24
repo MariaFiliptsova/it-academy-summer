@@ -1,3 +1,6 @@
+import math
+import os
+
 '''https://www.hackerrank.com/challenges/py-if-else/problem
 '''
 
@@ -16,7 +19,6 @@ elif n > 20:
 
 
 def is_leap(year):
-    leap = False
     # Write your logic here
     if year % 4 == 0:
         if year % 100 == 0:
@@ -38,7 +40,6 @@ print(is_leap(year))
 
 
 def count_substring(string, sub_string):
-    length_of_substring = len(sub_string)
     total_ = 0
     for i in range(len(string) - len(sub_string) + 1):
         if (string[i:i + len(sub_string)] == sub_string):
@@ -55,13 +56,6 @@ if __name__ == '__main__':
 
 '''https://www.hackerrank.com/challenges/greedy-florist/problem
 '''
-
-import math
-import os
-import random
-import re
-import sys
-
 
 # Complete the getMinimumCost function below.
 def getMinimumCost(k, c):
