@@ -11,10 +11,19 @@ def fibonacci(n):
     """
 
     # write your code here
-    return ''  # write return value here
+    num1 = 1
+    num2 = 1
+    i = 0
+    while i < n - 2:
+        num_sum = num1 + num2
+        num1 = num2
+        num2 = num_sum
+        i = i + 1
+
+    return num2  # write return value here
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    n = 0
+    n = 11
     print(fibonacci(n))

@@ -13,10 +13,14 @@ def palindrom(n):
     """
 
     # write your code here
-    return ''  # write return value here
+    n = str(n)
+    if n == n[::-1]:
+        return 'True'
+    else:
+        return 'False'
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    n = 0
+    n = 109
     print(palindrom(n))

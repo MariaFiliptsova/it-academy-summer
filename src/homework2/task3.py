@@ -14,10 +14,19 @@ def sub_string(str_):
     """
 
     # write your code here
-    return ''  # write return value here
+    line_without_space = str_.replace(" ", "")
+    length_of_line = len(line_without_space)
+    new_line = []
+    for symbol in line_without_space:
+        if symbol not in new_line:
+            new_line.append(symbol)
+    return ''.join(new_line)
+
+
+# write return value here
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    str_ = ''
+    str_ = 'this is my sentence'
     print(sub_string(str_))
