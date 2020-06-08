@@ -18,4 +18,3 @@ kortezh2 = ([1, 2, 3],)
 print(len(kortezh2))
 for i in kortezh2[0]:
     print(i)
-    

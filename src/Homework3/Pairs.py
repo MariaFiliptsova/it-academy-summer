@@ -7,7 +7,7 @@
 """
 import math
 
-spisok = '1 1 1 1 1'.split()
+spisok = '1 1 1 1 23 4 2 3 2'.split()
 count_appearences = {}
 number_of_pairs = 0
 for i in spisok:
@@ -16,6 +16,6 @@ print(count_appearences)
 for j in count_appearences.values():
     if j > 1:
         # формулу биномиального коэффицента подсказали математики на работе
-        binomial_coefficient = math.factorial(j) / (math.factorial(2) * math.factorial(j - 2))
-        number_of_pairs += binomial_coefficient
+        b_c = math.factorial(j) / (math.factorial(2) * math.factorial(j - 2))
+        number_of_pairs += b_c
 print(number_of_pairs)
