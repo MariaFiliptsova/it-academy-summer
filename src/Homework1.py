@@ -9,29 +9,29 @@ import unittest
 import xml.etree.ElementTree as etree
 
 
-#1 line: Output
+# 1 line: Output
 print('Hello, world!')
 
 
-#2 lines: Input, assignment
+# 2 lines: Input, assignment
 name = input('What is your name?\n')
 print('Hi, %s.' % name)
 
 
-#3 lines: For loop, built-in enumerate function, new style formatting
+# 3 lines: For loop, built-in enumerate function, new style formatting
 friends = ['john', 'pat', 'gary', 'michael']
 for i, name in enumerate(friends):
     print("iteration {iteration} is {name}".format(iteration=i, name=name))
 
 
-#4 lines: Fibonacci, tuple assignment
+# 4 lines: Fibonacci, tuple assignment
 parents, babies = (1, 1)
 while babies < 100:
     print('This generation has {0} babies'.format(babies))
     parents, babies = (babies, parents + babies)
 
 
-#5 lines: Functions
+# 5 lines: Functions
 def greet(name):
     print('Hello', name)
 
@@ -40,7 +40,7 @@ greet('Jill')
 greet('Bob')
 
 
-#6 lines: Import, regular expressions
+# 6 lines: Import, regular expressions
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
@@ -48,7 +48,7 @@ for test_string in ['555-1212', 'ILL-EGAL']:
         print(test_string, 'rejected')
 
 
-#7 lines: Dictionaries, generator expressions
+# 7 lines: Dictionaries, generator expressions
 prices = {'apple': 0.40, 'banana': 0.50}
 my_purchase = {
     'apple': 1,
@@ -58,7 +58,7 @@ grocery_bill = sum(prices[fruit] * my_purchase[fruit]
 print('I owe the grocer $%.2f' % grocery_bill)
 
 
-#8 lines: Command line arguments, exception handling
+# 8 lines: Command line arguments, exception handling
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
     print('sum =', total)
@@ -66,7 +66,7 @@ except ValueError:
     print('Please supply integer arguments')
 
 
-#9 lines: Opening files
+# 9 lines: Opening files
 python_files = glob.glob('*.py')
 for file_name in sorted(python_files):
     print('    ------' + file_name)
@@ -78,7 +78,7 @@ for file_name in sorted(python_files):
     print()
 
 
-#10 lines: Time, conditionals, from..import, for..else
+# 10 lines: Time, conditionals, from..import, for..else
 activities = {8: 'Sleeping',
               9: 'Commuting',
               17: 'Working',
@@ -97,7 +97,7 @@ else:
     print('Unknown, AFK or sleeping!')
 
 
-#11 lines: Triple-quoted strings, while loop
+# 11 lines: Triple-quoted strings, while loop
 REFRAIN = '''
 %d bottles of beer on the wall,
 %d bottles of beer,
@@ -111,7 +111,7 @@ while bottles_of_beer > 1:
     bottles_of_beer -= 1
 
 
-#12 lines: Classes
+# 12 lines: Classes
 class BankAccount(object):
     def __init__(self, initial_balance=0):
         self.balance = initial_balance
@@ -131,7 +131,7 @@ my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
 
 
-#13 lines: Unit testing with unittest
+# 13 lines: Unit testing with unittest
 def median(pool):
     copy = sorted(pool)
     size = len(copy)
@@ -150,7 +150,7 @@ if __name__ == '__main__':
     unittest.main()
 
 
-#14 lines: Doctest-based testing
+# 14 lines: Doctest-based testing
 def average(pool):
     """Statistical median to demonstrate doctest.
 
@@ -171,7 +171,7 @@ if __name__ == '__main__':
     doctest.testmod()
 
 
-#15 lines: itertools
+# 15 lines: itertools
 lines = '''
 This is the
 first paragraph.
@@ -183,7 +183,7 @@ for has_chars, frags in itertools.groupby(lines, bool):
         print(' '.join(frags))
 
 
-#16 lines: csv module, tuple unpacking, cmp() built-in
+# 16 lines: csv module, tuple unpacking, cmp() built-in
 def cmp(a, b):
     return (a > b) - (a < b)
 
@@ -205,7 +205,7 @@ with open('stocks.csv', 'r') as stocksFile:
         print('%s is %s (%.2f)' % (name, status, float(pct)))
 
 
-#18 lines: 8-Queens Problem (recursion)
+# 18 lines: 8-Queens Problem (recursion)
 BOARD_SIZE = 8
 
 
@@ -236,7 +236,7 @@ for answer in solve(BOARD_SIZE):
     print(answer)
 
 
-#20 lines: Prime numbers sieve w/fancy generators
+# 20 lines: Prime numbers sieve w/fancy generators
 def iter_primes():
     numbers = itertools.count(2)
     while True:
@@ -252,7 +252,7 @@ for p in iter_primes():
     print(p)
 
 
-#21 lines: XML/HTML parsing
+# 21 lines: XML/HTML parsing
 dinner_recipe = '''<html><body><table>
 <tr><th>amt</th><th>unit</th><th>item</th></tr>
 <tr><td>24</td><td>slices</td><td>baguette</td></tr>
@@ -270,7 +270,7 @@ for ingredient in tree.getiterator('tr'):
         print("%s: %s %s" % (item.text, amt.text, unit.text))
 
 
-#28 lines: 8-Queens Problem (define your own exceptions)
+# 28 lines: 8-Queens Problem (define your own exceptions)
 BOARD_SIZE = 8
 
 
@@ -305,7 +305,7 @@ print(queens)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 
 
-#33 lines: "Guess the Number" Game (edited)
+# 33 lines: "Guess the Number" Game (edited)
 # from http://inventwithpython.com
 guesses_made = 0
 
