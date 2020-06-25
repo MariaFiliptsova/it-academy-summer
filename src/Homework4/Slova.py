@@ -7,7 +7,8 @@ import string
 """
 tekst = 'Пьер сидел в гостиной, где Шиншин, как с приезжим из-за границы, \
 завел с ним скучный для Пьера политический разговор, \
-к которому присоединились и другие. Когда заиграла музыка, Наташа вошла в гостиную.'
+к которому присоединились и другие. Когда заиграла музыка, \
+Наташа вошла в гостиную.'
 punc = string.punctuation
 tekst_without_punc = ''.join(symbol for symbol in tekst if symbol not in punc)
 spisok = set(tekst_without_punc.split())
