@@ -15,11 +15,11 @@ def sub_string(str_):
 
     # write your code here
     line_without_space = str_.replace(" ", "")
-    new_line = []
+    spisok_symbolov = []
     for symbol in line_without_space:
-        if symbol not in new_line:
-            new_line.append(symbol)
-    return ''.join(new_line)
+        if symbol not in spisok_symbolov:
+            spisok_symbolov.append(symbol)
+    return ''.join(spisok_symbolov)
 
 
 # write return value here

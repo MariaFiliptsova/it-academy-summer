@@ -20,11 +20,10 @@ def longest_word(str_):
     longest_word_length = 0
     punctuation_symbols = string.punctuation
     for current_word in str_:
-        current_word_length = len(current_word)
-        if current_word[-1] in punctuation_symbols:
-            current_word_length -= 1
+        without_punc = current_word.strip(punctuation_symbols)
+        current_word_length = len(without_punc)
         if current_word_length > longest_word_length:
-            longest_word = current_word
+            longest_word = without_punc
             longest_word_length = current_word_length
 
     return longest_word
@@ -35,5 +34,5 @@ def longest_word(str_):
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    str_ = 'eh, bum an'
+    str_ = 'eh, bum vo, an'
     print(longest_word(str_))
