@@ -19,24 +19,28 @@ try:
                         if line.startswith('New'):
                             line_starts_with_new = True
                             for line in f:
-                                if line_starts_with_new is True and count_movies < 250:
-                                    top250.write(' '.join((line.split()[3:-1])) + '\n')
-                                    rating = line.split()[2]
-                                    if rating not in counter:
-                                        counter.update({rating: 1})
-                                    else:
-                                        counter[rating] += 1
-                                    year = line.split()[-1]
-                                    if year not in years_counter:
-                                        years_counter.update({year: 1})
-                                    else:
-                                        years_counter[year] += 1
-                                    count_movies += 1
+                                if line_starts_with_new is True:
+                                    if count_movies < 250:
+                                        movie_name = line.split()[3:-1]
+                                        top250.write(' '.join(movie_name) + '\n')
+                                        rating = line.split()[2]
+                                        if rating not in counter:
+                                            counter.update({rating: 1})
+                                        else:
+                                            counter[rating] += 1
+                                        year = line.split()[-1]
+                                        if year not in years_counter:
+                                            years_counter.update({year: 1})
+                                        else:
+                                            years_counter[year] += 1
+                                        count_movies += 1
                     list_keys = list(years_counter.keys())
                     list_keys.sort()
                     for k in counter:
-                        movie_ratings.write(k + ' ' + '*' * counter[k] + '\n')
+                        movie_ratings.write(k + ' ' + '*' * \
+                                            counter[k] + '\n')
                     for y in list_keys:
-                        years.write(y.strip('()') + ' ' + '*' * years_counter[y] + '\n')
+                        years.write(y.strip('()') + ' ' + '*' * \
+                                    years_counter[y] + '\n')
 except FileNotFoundError:
     print('File Not Found')

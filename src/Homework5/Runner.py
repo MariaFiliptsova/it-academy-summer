@@ -1,7 +1,8 @@
 import math
 
 '''Оформите решение задач из прошлых домашних работ в функции.
-Напишите функцию runner. (все станет проще когда мы изучим модули, getattr и setattr)
+Напишите функцию runner. (все станет проще когда мы изучим модули,
+getattr и setattr)
 runner() – все фукнции вызываются по очереди
 runner(‘func_name’) – вызывается только функцию func_name.
 runner(‘func’, ‘func1’...) - вызывает все переданные функции
@@ -21,7 +22,8 @@ def pairs(spisok=[1, 1, 1]):
         count_appearences.update({i: spisok.count(i)})
         for j in count_appearences.values():
             if j > 1:
-                b_c = math.factorial(j) / (math.factorial(2) * math.factorial(j - 2))
+                b_c = math.factorial(j) / (math.factorial(2) * \
+                                           math.factorial(j - 2))
                 number_of_pairs += b_c
                 return number_of_pairs
 
