@@ -3,7 +3,8 @@
 Откройте и прочитайте файл(если его нет необходимо вывести ошибку).
 Найдите ТОП250 фильмов и извлеките заголовки.
 Программа создает 3 файла  top250_movies.txt –
-названия файлов, ratings.txt – гистограмма рейтингов, years.txt – гистограмма годов.
+названия файлов, ratings.txt – гистограмма рейтингов,
+years.txt – гистограмма годов.
 '''
 line_starts_with_new = False
 count_movies = 0
@@ -18,7 +19,7 @@ try:
                         if line.startswith('New'):
                             line_starts_with_new = True
                             for line in f:
-                                if line_starts_with_new == True and count_movies < 250:
+                                if line_starts_with_new is True and count_movies < 250:
                                     top250.write(' '.join((line.split()[3:-1])) + '\n')
                                     rating = line.split()[2]
                                     if rating not in counter:
