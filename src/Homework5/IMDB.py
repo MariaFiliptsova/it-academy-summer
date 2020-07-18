@@ -21,8 +21,8 @@ try:
                             for line in f:
                                 if line_starts_with_new is True:
                                     if count_movies < 250:
-                                        movie_name = line.split()[3:-1]
-                                        top250.write(' '.join(movie_name)+'\n')
+                                        name = line.split()[3:-1]
+                                        top250.write(' '.join(name) + '\n')
                                         rating = line.split()[2]
                                         if rating not in counter:
                                             counter.update({rating: 1})
@@ -39,6 +39,7 @@ try:
                     for k in counter:
                         movie_ratings.write(k + ' ' + '*' * counter[k] + '\n')
                     for y in list_keys:
-                        years.write(y.strip('()') + ' ' + '*' * y_counter[y] + '\n')
+                        x = y.strip('()')
+                        years.write(x + ' ' + '*' * y_counter[y] + '\n')
 except FileNotFoundError:
     print('File Not Found')
