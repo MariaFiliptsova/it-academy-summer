@@ -9,7 +9,7 @@ years.txt – гистограмма годов.
 line_starts_with_new = False
 count_movies = 0
 counter = {}
-years_counter = {}
+y_counter = {}
 try:
     with open('ratings.list', 'r', encoding="ISO-8859-1") as f:
         with open('top250_movies.txt', 'w') as top250:
@@ -29,18 +29,16 @@ try:
                                         else:
                                             counter[rating] += 1
                                         year = line.split()[-1]
-                                        if year not in years_counter:
-                                            years_counter.update({year: 1})
+                                        if year not in y_counter:
+                                            y_counter.update({year: 1})
                                         else:
-                                            years_counter[year] += 1
+                                            y_counter[year] += 1
                                         count_movies += 1
-                    list_keys = list(years_counter.keys())
+                    list_keys = list(y_counter.keys())
                     list_keys.sort()
                     for k in counter:
-                        movie_ratings.write(k + ' ' + '*' *
-                                            counter[k] + '\n')
+                        movie_ratings.write(k + ' ' + '*' * counter[k] + '\n')
                     for y in list_keys:
-                        years.write(y.strip('()') + ' ' + '*' *
-                                    years_counter[y] + '\n')
+                        years.write(y.strip('()') + ' ' + '*' * y_counter[y] + '\n')
 except FileNotFoundError:
     print('File Not Found')
