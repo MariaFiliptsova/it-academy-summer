@@ -22,7 +22,7 @@ def pairs(spisok=[1, 1, 1]):
         count_appearences.update({i: spisok.count(i)})
         for j in count_appearences.values():
             if j > 1:
-                b_c = math.factorial(j) / (math.factorial(2) * \
+                b_c = math.factorial(j) / (math.factorial(2) *
                                            math.factorial(j - 2))
                 number_of_pairs += b_c
                 return number_of_pairs
