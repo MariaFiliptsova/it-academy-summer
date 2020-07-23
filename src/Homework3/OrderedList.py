@@ -9,7 +9,7 @@
 spisok = [0, 8, 21, 0, 17, 0, 25]
 print(spisok)
 for i in spisok:
-    if i == 0:
+    if not i:
         spisok.remove(i)
         spisok.append(i)
 print(spisok)
