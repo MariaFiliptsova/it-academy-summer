@@ -1,6 +1,6 @@
 # 1 Используйте генератор списков чтобы получить следующий:
 # ['ab', 'ac', 'ad', 'bb', 'bc', 'bd'].
-#spisok = [c + d for c in ['a', 'b'] for d in ['b', 'c', 'd']]
+# spisok = [c + d for c in ['a', 'b'] for d in ['b', 'c', 'd']]
 spisok = [c + d for c in 'ab' for d in 'bcd']
 print(spisok)
 
@@ -11,7 +11,7 @@ print(sliced_list)
 
 # 3 Используйте генератор списков чтобы получить следующий
 # ['1a', '2a', '3a', '4a'].
-#spisok2 = [str(c) + d for c in range(1, 5) for d in ['a']]
+# spisok2 = [str(c) + d for c in range(1, 5) for d in ['a']]
 spisok2 = [c + d for c in '1234' for d in 'a']
 print(spisok2)
 
