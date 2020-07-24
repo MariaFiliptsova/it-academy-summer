@@ -26,19 +26,19 @@ French
 Затем - количество языков, которые знает хотя бы один школьник,
 на следующих строках - список таких языков.
 """
-N = int(input('Enter number of students\n'))
-all_languages = []
-spoken_by_everyone = set()
-for i in range(N):
+
+N = int(input('Enter a number of students\n'))
+all_students = set()
+all_languages = set()
+for i in range(int(N)):
     M = int(input('Number of spoken languages\n'))
-    for j in range(M):
-        spoken_language = input('What language\n')
-        if spoken_language not in all_languages:
-            all_languages.append(spoken_language)
-        else:
-            pass
-# Пока не знаю как выести языки, которые знают все школьники.
-# как-то через set и &, но пока не знаю как данные организовать,
-# чтобы взять пересечения.
+    spoken_languages = {input('What language\n') for j in range(M)}
+    all_languages.update(spoken_languages)
+    if len(all_students) == 0:
+        all_students.update(spoken_languages)
+    else:
+        all_students &= spoken_languages
+print(len(all_students))
+print(' '.join(all_students))
 print(len(all_languages))
 print(' '.join(all_languages))

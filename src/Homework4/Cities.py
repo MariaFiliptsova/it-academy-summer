@@ -28,13 +28,17 @@ Ukraine
 Russia
 Russia
 """
+
 N = int(input('Enter number of countries\n'))
 countries_with_cities = {}
+repeated_cities = {}
 for i in range(N):
     country, *cities = input('Enter country and its cities\n').split()
     for city in cities:
-        countries_with_cities.update({city: country})
-
+        if city not in countries_with_cities:
+            countries_with_cities.update({city: country})
+        else:
+            repeated_cities.update({city: country})
 M = int(input('Enter the number of cities\n'))
 list_of_cities = []
 for j in range(M):
@@ -42,6 +46,8 @@ for j in range(M):
 
 for y in list_of_cities:
     if y in countries_with_cities:
-        print(countries_with_cities[y])
+        print(y + ' is in ' + countries_with_cities[y])
+        if y in repeated_cities:
+            print('and also in ' + repeated_cities[y])
     else:
         print('No idea where this city is')
