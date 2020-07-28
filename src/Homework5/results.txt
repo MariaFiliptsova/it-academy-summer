@@ -1,10 +1,3 @@
-5
-2
-5
-2
-5
-2
-5
-2
-5
-2
+
+func is called on Tue Jul 28 09:40:05 2020 and its results is 5
+func is called on Tue Jul 28 09:40:05 2020 and its results is 2
