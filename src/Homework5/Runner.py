@@ -8,6 +8,7 @@ runner(‘func_name’) – вызывается только функцию fun
 runner(‘func’, ‘func1’...) - вызывает все переданные функции
 '''
 
+
 class Functions():
     # Дан список чисел. Посчитайте, сколько в нем пар элементов,
     # равных друг другу. Считается, что любые два элемента,
@@ -59,6 +60,7 @@ def runner(*args):
                 print(func())
             else:
                 print('Unknown function')
+
 
 runner()
 runner('pairs')
