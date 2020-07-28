@@ -9,8 +9,8 @@ def dec(func):
     def wrapper(*args, **kwargs):
         value = func(*args, **kwargs)
         with open('results.txt', 'a') as f:
-            f.write(func.__name__ + ' is called on ' + str(time.asctime())
-                    + ' and its results is ' + str(value) + '\n')
+            f.write(func.__name__ + ' is called on ' + str(time.asctime()) +
+                    ' and its results is ' + str(value) + '\n')
         return value
 
     return wrapper
