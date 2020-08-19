@@ -23,7 +23,6 @@ class DecoratorTest(unittest.TestCase):
         ([3, 5, 1], 2),
         ({2: 1, 3: 4}, 2),
     )
-
     @ddt.unpack
     def test_error(self, first_p, second_p):
         '''Assert that TypeError is raised in case of wrong data type'''
@@ -32,7 +31,8 @@ class DecoratorTest(unittest.TestCase):
 
     def test_filecontent(self):
         '''Assert that after homework.py is run the file results.txt has
-        the correct data'''
+        the correct data
+        '''
         with open('results.txt', 'r') as f:
             for line in f:
                 line_content = ' '.join(line.split()[1:3])
