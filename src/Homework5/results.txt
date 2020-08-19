@@ -1,4 +1,0 @@
-func is called on Tue Jul 28 11:22:57 2020 The result is 5
-func is called on Tue Jul 28 11:22:57 2020 The result is 2
-func is called on Tue Jul 28 11:25:03 2020 The result is 5
-func is called on Tue Jul 28 11:25:03 2020 The result is 2
