@@ -1,4 +1,5 @@
 import ddt
+
 import unittest
 
 from Homework6 import homework
@@ -22,6 +23,7 @@ class DecoratorTest(unittest.TestCase):
         ([3, 5, 1], 2),
         ({2: 1, 3: 4}, 2),
     )
+
     @ddt.unpack
     def test_error(self, first_p, second_p):
         '''Assert that TypeError is raised in case of wrong data type'''
