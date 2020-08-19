@@ -30,12 +30,7 @@ class DecoratorTest(unittest.TestCase):
             homework.func(first_p, second_p)
 
     def test_filecontent(self):
-
-        """Assert that after homework.py is run the file results.txt has
-        the correct data
-        
-        """
-
+        """Assert results.txt has the correct data"""
         with open('results.txt', 'r') as f:
             for line in f:
                 line_content = ' '.join(line.split()[1:3])
